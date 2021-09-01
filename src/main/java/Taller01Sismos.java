@@ -7,20 +7,24 @@ public class Taller01Sismos {
     }
 
     public static void iniciarPrograma() {
+        double[] sismos1=new double[70];
         while (true) {
+
             mostarMenu();
             var option = leerOpcion();
+
+
             switch (option) {
                 case "a":
-                    double[] sismos1 = llenarArreglo();
-                    double[] arr=sismos1;
+                   sismos1 = llenarArreglo();
+
                     continue;
 
 
 
                 case "b":
 
-                    buscarMayorSismo(arr);
+                    buscarMayorSismo(sismos1);
 
 
 
@@ -39,8 +43,12 @@ public class Taller01Sismos {
                     System.out.println("Error!");
 
                     break;
-                case "s":
+                case "S":
+
                     return;
+                case "N":
+
+                    break;
                 default:
                     System.out.println("La opcion ingresada es incorrecta");
             }
@@ -53,7 +61,7 @@ public class Taller01Sismos {
         var scanner = new Scanner(System.in);
         System.out.println("Ingrese opcion:");
         return scanner.nextLine();
-    } // captura opcion de programa ingresada por el usuario
+    }
 
     public static void mostarMenu() {
         System.out.println("**********************************************************");
@@ -75,10 +83,10 @@ public class Taller01Sismos {
 
     public static double[] llenarArreglo() {
         double[] A = new double[70];
-        for (int arr = 0; arr < 70; arr++) {
-            A[arr] = Math.random() * 9.9;
+        for (int sismos = 0; sismos < 70; sismos++) {
+            A[sismos] = Math.random() * 9.9;
 
-
+            System.out.println(A[sismos]);
 
         }
         return A;
@@ -86,7 +94,7 @@ public class Taller01Sismos {
 
     } // simular el ingreso de datos con valores aleatorios entre 0.0 y 9.9 y retorna el arreglo.
 
-    public static void imprimirNumDecimal(double numero) {
+    public static void imprimirNumero(double numero) {
         System.out.println("El numero es: " + numero);
 
     }
@@ -106,7 +114,7 @@ public class Taller01Sismos {
 
 
     }
-    public static double[] crearArreglo() {       //metodo 1
+    public static double[] crearArreglo() {
         Random rnum = new Random();
 
         double[] arr = new double[70];
@@ -126,7 +134,7 @@ public class Taller01Sismos {
 
     //public static enviarSMS( double [ ] sismos ...) // simular un mensaje SMS por pantalla, retornando una String por cada sismo de magnitud mayor o igual a 7.0, con el mensaje: "Alerta!!! se debe evacuar zona costera!"
 
-    //public static String salir (  ) // permite decidir si el usuario desea salir o no del programa.
+
 
 
 }
